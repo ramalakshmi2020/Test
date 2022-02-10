@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: update-adx
+spec:
+  selector:
+    app: update-adx-app
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-adx-app
+spec:
+  selector:
+    matchLabels:
+      app: update-adx-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: update-adx-app
+    spec:
+      containers:
+      - name: update-adx
+        image: sudha2022/updateadx:V1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
