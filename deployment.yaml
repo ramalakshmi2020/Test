@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: update-adx
-        image: sudha2022/updateadx:V1
+        image: sudha2022/updateadx:V2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
