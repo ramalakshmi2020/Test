@@ -1,21 +1,21 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: update-adx-app
+  name: updateadx-deployment
+  labels:
+    app: updateadx-app
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: update-adx-app
-  replicas: 2
+      app: updateadx-app
   template:
     metadata:
       labels:
-        app: update-adx-app
+        app: updateadx-app
     spec:
       containers:
-      - name: update-adx
-        image: sudha2022/updateadx:V2
-        imagePullPolicy: IfNotPresent
+      - name: updateadx-app
+        image: sudha2022\updateadx:V2
         ports:
-        - containerPort: 5000
+        - containerPort: 80
