@@ -1,13 +1,3 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: update-adx
-spec:
-  selector:
-    app: update-adx-app
-  type: LoadBalancer
-
----
 
 apiVersion: apps/v1
 kind: Deployment
